@@ -1,0 +1,9 @@
+.toast-header{
+	color: #fff;
+}
+.float-message{
+	bottom: 30px;
+	position: absolute;
+	left: 10px;
+	line-height: 40px;
+}
