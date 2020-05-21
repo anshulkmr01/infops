@@ -42,13 +42,14 @@
 				<div class="container">
 					<div class="form-group mt-4">
 						<div class="row text-center">
-							<div class="col-3"><a href="<?= base_url('fetch_question/maths')?>"><div class="w-100 mr-1 btn btn-success">Maths</div></a></div>
-							<div class="col-3"><a href="<?= base_url('fetch_question/english')?>"><div class="w-100 mr-1 btn btn-success">English</div></a></div>
-							<div class="col-3"><a href="<?= base_url('fetch_question/crt_afr')?>"><div class="w-100 mr-1 btn btn-success">Current Affairs</div></a></div>
-							<div class="col-3"><a href="<?= base_url('fetch_question/reasoning')?>"><div class="w-100 mr-1 btn btn-success">Reasoning</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/maths')?>"><div class="w-100 mr-1 btn btn-success">Maths</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/english')?>"><div class="w-100 mr-1 btn btn-success">English</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/crt_afr')?>"><div class="w-100 mr-1 btn btn-success">Current Affairs</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/reasoning')?>"><div class="w-100 mr-1 btn btn-success">Reasoning</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/typing')?>"><div class="w-100 mr-1 btn btn-success">Typing</div></a></div>
 						</div>
 						<hr>
-						<legend class="text-uppercase"><?= $subject; ?> Question Paper</legend>
+						<legend class="text-uppercase"><?= $subject; ?></legend>
 						<div class="mb-3 mt-3">
 						<form>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Question</button>
@@ -81,6 +82,7 @@
 							      data-option_c="<?= $value['option_c'] ?>"
 							      data-option_d="<?= $value['option_d'] ?>"
 							      data-correct_option="<?= $value['correct_option'] ?>"
+							      data-duration="<?= $value['duration'] ?>"
 							      href="#edit_question" class="edit_question"><span class="btn btn-info btn-sm">Edit</span></a></td>
 							      <td><a
 							      data-toggle="modal" 
@@ -90,6 +92,7 @@
 							      data-option_c="<?= $value['option_c'] ?>"
 							      data-option_d="<?= $value['option_d'] ?>"
 							      data-correct_option="<?= $value['correct_option'] ?>"
+							      data-duration="<?= $value['duration'] ?>"
 							      href="#view_question" class=" view_question"><span class="btn btn-primary btn-sm">View</span></td>
 							      <td><a href="<?= base_url('delete_question/'.$value['ID'].'/'.$subject)?>"><span data-toggle="modal" class="btn btn-danger btn-sm delete">Delete</span></a></td>
 							    </tr>
@@ -110,6 +113,38 @@
 		<!-- /mainbody -->
 		</div>
 		<!-- Add question modal -->
+		<?php if($subject == 'typing'){?>
+		<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Add Paragraph for typing test</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		       <form action="<?= base_url('save_question')?>" method="post">
+				  <fieldset>
+				    <div class="form-group">
+				      <legend>Paragraph:</legend>
+				      <textarea required name="question" class="form-control" rows="3"></textarea>
+				    </div>
+				  	<div class="form-group">
+				  		<input type="hidden" name="subject" value="<?= $subject; ?>">
+				  		<input type="time" required value="00:59" name="duration">
+				  	</div>
+				    <button type="submit" class="btn btn-primary">Save</button>
+				  </fieldset>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<?php } else{?>
 		<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
@@ -150,6 +185,8 @@
 					    </div>
 					    <br>
 				  		<label>Select a correct answer*</label>
+				  		<br>
+				  		Question Duration: <input type="time" required value="00:59" name="duration">
 				  	</div>
 				    <button type="submit" class="btn btn-primary">Save</button>
 				  </fieldset>
@@ -161,8 +198,35 @@
 		    </div>
 		  </div>
 		</div>
+		<?php }?>
 		<!-- /Add question madal -->
 		<!-- View Question Modal -->
+		<?php if($subject == 'typing'){?>
+		<div class="modal fade bd-example-modal-lg" id="view_question" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">View Paragraph</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+				  <fieldset>
+				    <div class="form-group">
+				      <legend>Paragraph:</legend>
+				      <div id="ques_view_div"></div>
+				    </div>
+				    <div>Time Duration: <span id="time_duration"></span></div>
+				  </fieldset>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<?php } else{?>
 		<div class="modal fade bd-example-modal-lg" id="view_question" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
@@ -197,8 +261,42 @@
 		    </div>
 		  </div>
 		</div>
+		<?php }?>
 		<!--/ View Question Moal -->
 		<!-- Edit Question Modal -->
+		<?php if($subject == 'typing'){?>
+		<div class="modal fade bd-example-modal-lg" id="edit_question" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Edit Question</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		       <form action="<?= base_url('update_question')?>" method="post">
+				  <fieldset>
+				    <div class="form-group">
+				      <legend>Question:</legend>
+				      <textarea required name="question" id="ques_textarea" class="form-control" rows="3"></textarea>
+				    </div>
+				  	<div class="form-group">
+				  		<input type="hidden" name="ID" id="ques_id">
+				  		<input type="hidden" name="subject" id="subject">
+				  		<input type="time" required id="time_duration_input" name="duration">
+				  	</div>
+				    <button type="submit" class="btn btn-primary">Update</button>
+				  </fieldset>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<?php } else{?>
 		<div class="modal fade bd-example-modal-lg" id="edit_question" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
@@ -240,6 +338,8 @@
 					    </div>
 					    <br>
 				  		<label>Select a correct answer*</label>
+				  		<br>
+				  		Question Duration: <input type="time" required name="duration">
 				  	</div>
 				    <button type="submit" class="btn btn-primary">Update</button>
 				  </fieldset>
@@ -251,6 +351,7 @@
 		    </div>
 		  </div>
 		</div>
+		<?php }?>
 		<!--/ Edit Question Moal -->
 	<!-- footer -->
 	<footer class="admin-footer">
@@ -272,6 +373,7 @@
      $("#option_c_li").html($(this).data('option_c'));
      $("#option_d_li").html($(this).data('option_d'));
      $("#correct_option_label").html($(this).data('correct_option'));
+     $("#time_duration").html($(this).data('duration'));
 });
 
 // Setting Value of Docnament in Modal for update//
@@ -286,6 +388,8 @@
 
      var correct_option = 'customRadio_'+$(this).data('correct_option');
      $("#"+correct_option).attr('checked','checked');
+
+     $("#time_duration_input").val($(this).data('duration'));
 });
 
 

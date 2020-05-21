@@ -36,6 +36,40 @@
 			$student_data = $this->db->where('ID',$user_data['ID'])->get('student')->row_array();
 			$student_answer = $this->db->where('student_ID',$user_data['ID'])->get('studentanswers')->result_array();
 
+			//Itiration for Imat
+			if($user_data['catID'] == 'imat'){
+			foreach ($all_questions as $key => $value) {
+				if($all_questions[$key]['subject'] == 'maths' or $all_questions[$key]['subject'] == 'english' or $all_questions[$key]['subject'] == 'reasoning'){
+					continue;
+						}
+						else{
+							unset($all_questions[$key]);	
+						}
+					}
+			}
+
+			//Itiration for Freelancer
+			if($user_data['catID'] == 'freelancer'){
+			foreach ($all_questions as $key => $value) {
+				if($all_questions[$key]['subject'] == 'english' or $all_questions[$key]['subject'] == 'typing'){
+					continue;
+						}
+						else{
+							unset($all_questions[$key]);	
+						}
+					}
+			}
+
+			//Skip Typing if Not Freelancer
+			if($user_data['catID'] != 'freelancer'){
+			foreach ($all_questions as $key => $value) {
+				if($all_questions[$key]['subject'] == 'typing'){
+					
+							unset($all_questions[$key]);	
+						}
+					}
+			}
+
 			$s_no = 0;
 			foreach ($all_questions as $key => $value) {
 				$s_no ++;
@@ -43,8 +77,6 @@
 			}
 
 			foreach ($all_questions as $key_ => $value_) {
-				// $i++;
-				// $all_questions[$key_]['s_no'] = $i;
 				foreach ($student_answer as $key => $value) {
 					if($value_['ID'] == $value['question_ID']){
 						unset($all_questions[$key_]);
@@ -52,6 +84,11 @@
 				}
 				unset($all_questions[$key_]['correct_option']);
 			}
+
+			echo "<pre>";
+			print_r($all_questions);
+			exit();
+
 			return $all_questions;
 		}
 
