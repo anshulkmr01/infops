@@ -42,11 +42,11 @@
 				<div class="container">
 					<div class="form-group mt-4">
 						<div class="row text-center">
-							<div class="col-2"><a href="<?= base_url('fetch_question/maths')?>"><div class="w-100 mr-1 btn btn-success">Maths</div></a></div>
-							<div class="col-2"><a href="<?= base_url('fetch_question/english')?>"><div class="w-100 mr-1 btn btn-success">English</div></a></div>
-							<div class="col-2"><a href="<?= base_url('fetch_question/crt_afr')?>"><div class="w-100 mr-1 btn btn-success">Current Affairs</div></a></div>
-							<div class="col-2"><a href="<?= base_url('fetch_question/reasoning')?>"><div class="w-100 mr-1 btn btn-success">Reasoning</div></a></div>
-							<div class="col-2"><a href="<?= base_url('fetch_question/typing')?>"><div class="w-100 mr-1 btn btn-success">Typing</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/maths')?>"><div class="w-100 mr-1 btn btn-success" <?php if($subject == 'maths' ) echo "style='background:#2c3e50'";?> >Maths</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/english')?>"><div class="w-100 mr-1 btn btn-success" <?php if($subject == 'english' ) echo "style='background:#2c3e50'";?> >English</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/crt_afr')?>"><div class="w-100 mr-1 btn btn-success" <?php if($subject == 'crt_afr' ) echo "style='background:#2c3e50'";?> >Current Affairs</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/reasoning')?>"><div class="w-100 mr-1 btn btn-success" <?php if($subject == 'reasoning' ) echo "style='background:#2c3e50'";?> >Reasoning</div></a></div>
+							<div class="col-2"><a href="<?= base_url('fetch_question/typing')?>"><div class="w-100 mr-1 btn btn-success" <?php if($subject == 'typing' ) echo "style='background:#2c3e50'";?> >Typing</div></a></div>
 						</div>
 						<hr>
 						<legend class="text-uppercase"><?= $subject; ?></legend>
@@ -252,6 +252,7 @@
 					    </ol>
 					    <label class="text-primary">Correct Answer is: Option <b id="correct_option_label"></b></label>
 				  	</div>
+				  	 <div>Time Duration: <span id="time_duration"></span></div>
 				  </fieldset>
 				</form>
 		      </div>
@@ -339,7 +340,7 @@
 					    <br>
 				  		<label>Select a correct answer*</label>
 				  		<br>
-				  		Question Duration: <input type="time" required name="duration">
+				  		Question Duration: <input type="time" required id="time_duration_input" name="duration">
 				  	</div>
 				    <button type="submit" class="btn btn-primary">Update</button>
 				  </fieldset>

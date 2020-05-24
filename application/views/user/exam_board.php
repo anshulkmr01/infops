@@ -76,6 +76,8 @@
 				  	<button type="submit" class="btn btn-primary">Submit</button>
 				  	<?php } else{ ?>
 				  	<div class="form-group">
+				  		
+						<input type="hidden" name="is_typing_test" value="1">
 				  		<input type="hidden" name="question_ID" value=" <?= $value['ID']?>">
 						<input type="hidden" name="correct_words" id="correct">
 						<input type="hidden" name="error_words" id="error">
@@ -99,7 +101,9 @@
 				  	</form>
 				<?php }?>
 			</div>
-			<div class="col-2">Time Left:<br><span id="timer"><?= $time_duration?></span> sec</div>
+			<?php if(isset($time_duration)){?>
+				<div class="col-2">Time Left:<br><span id="timer"><?= $time_duration?></span> sec</div>
+			<?php }?>
 		</div>
 		</div>
 	</div>
@@ -157,7 +161,7 @@
 	};
 </script>
 
-<?php if($value['subject'] == 'typing'){?>
+<?php if(isset($value['subject']) == 'typing'){?>
 
 <script type="text/javascript">
 	

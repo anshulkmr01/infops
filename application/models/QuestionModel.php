@@ -85,9 +85,9 @@
 				unset($all_questions[$key_]['correct_option']);
 			}
 
-			echo "<pre>";
-			print_r($all_questions);
-			exit();
+			// echo "<pre>";
+			// print_r($all_questions);
+			// exit();
 
 			return $all_questions;
 		}
