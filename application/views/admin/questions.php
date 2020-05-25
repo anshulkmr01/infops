@@ -72,7 +72,12 @@
 							  	foreach ($question_data as $key => $value) { $i++; ?>
 							    <tr class="table-light">
 							      <th scope="row"><?= $i; ?></th>
-							      <td class="w-100"><?= $value['question'] ?></td>
+							      <td class="w-100"><?= $value['question'] ?>
+							      <?php if($value['question_image']){?>
+							      	<br>
+							      	<br>
+							      	<img src="<?= $value['question_image'] ?>" style="width: 300px; height: 140px">
+							      <?php } ?></td>
 							      <td><a data-toggle="modal"
 							      data-id="<?= $value['ID'] ?>"
 							      data-subject="<?= $value['subject'] ?>"
@@ -155,11 +160,14 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		       <form action="<?= base_url('save_question')?>" method="post">
+		       <form action="<?= base_url('save_question')?>" method="post" enctype="multipart/form-data">
 				  <fieldset>
 				    <div class="form-group">
 				      <legend>Question:</legend>
 				      <textarea required name="question" class="form-control" rows="3"></textarea>
+				      
+				      <small>Image file for question:</small>
+				      <br><input type="file" name="question_image">
 				    </div>
 				  	<div class="form-group">
 				  		<input type="hidden" name="subject" value="<?= $subject; ?>">
@@ -242,6 +250,7 @@
 				    <div class="form-group">
 				      <legend>Question:</legend>
 				      <div id="ques_view_div"></div>
+				      <div><img src="" alt="img"></div>
 				    </div>
 				  	<div class="form-group">
 					    <ol type="a">
@@ -270,7 +279,7 @@
 		  <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Edit Question</h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Edit Paragraph</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -279,7 +288,7 @@
 		       <form action="<?= base_url('update_question')?>" method="post">
 				  <fieldset>
 				    <div class="form-group">
-				      <legend>Question:</legend>
+				      <legend>Paragraph:</legend>
 				      <textarea required name="question" id="ques_textarea" class="form-control" rows="3"></textarea>
 				    </div>
 				  	<div class="form-group">
@@ -308,11 +317,14 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		       <form action="<?= base_url('update_question')?>" method="post">
+		       <form action="<?= base_url('update_question')?>" method="post" enctype="multipart/form-data">
 				  <fieldset>
 				    <div class="form-group">
 				      <legend>Question:</legend>
 				      <textarea required name="question" id="ques_textarea" class="form-control" rows="3"></textarea>
+				      <small>Image file for question:</small>
+				      <br><input type="file" name="question_image">
+				      <br><input type="checkbox" name="remove_image"> <span>Remove Image</span> 
 				    </div>
 				  	<div class="form-group">
 				  		<input type="hidden" name="ID" id="ques_id">

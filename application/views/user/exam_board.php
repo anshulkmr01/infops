@@ -39,6 +39,7 @@
 						<p id="msg">A Paragraph will be appeared here once you click on start button</p>
 					<?php } else{?>
 					<p class=""><?= $value['question']?></p>
+					<p><img src="<?= $value['question_image']?>" style="width:500px;"></p>
 					<?php }?>
 					<hr>
 				</div>
