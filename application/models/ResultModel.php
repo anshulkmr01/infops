@@ -3,7 +3,7 @@
 	{
 		//Student who appeared in Exam
 		function fetch_result_student($cat){
-			$cat_data = $this->db->where(['catID'=>$cat, 'exam_start'=>1])->get('student')->result_array();
+			$cat_data = $this->db->where(['catID'=>$cat, 'exam_start'=>1])->get('student_doc')->result_array();
 			return $cat_data;
 		}
 
@@ -115,7 +115,7 @@
 			}
 
 			$student_answer['subject_wise_result'] = $subject_list;
-			$student_answer['student_data'] = $this->db->where('ID',$student_ID)->get('student')->row_array();
+			$student_answer['student_data'] = $this->db->where('enrollment_no',$student_ID)->get('student_doc')->row_array();
 			$student_answer['student_data']['number_of_sub'] = $number_of_subject;
 			$student_answer['student_data']['number_of_sub_pass'] = $number_of_subject_pass;
 			$student_answer['student_data']['exam_status'] = $exam_status;

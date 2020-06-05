@@ -52,7 +52,7 @@
 								<label class="text-primary">Student Name: </label> <span class="text-info"><?= $student_data['fname']." ".$student_data['lname']?></span>
 							</div>
 							<div class="font-weight-bold">
-								<label class="text-primary">Enrollment no.:</label> <span class="text-info" >/////</span>
+								<label class="text-primary">Enrollment no.:</label> <span class="text-info" ><?= $student_data['enrollment_no'];?></span>
 							</div>
 							<div class="font-weight-bold">
 								<label class="text-primary">Email:</label> <span class="text-info"><?= $student_data['email'];?></span>

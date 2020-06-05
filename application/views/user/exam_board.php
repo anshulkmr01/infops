@@ -8,9 +8,19 @@
 	?>
 	<!--/ Global Css using Helper -->
 </head>
+<style type="text/css">
+	
+body{
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+</style>
 <body onkeydown="return (event.keyCode != 116)">
 	<!-- Navbar -->
-		<?php $this->load->view('navbar');?>
+		<?php $this->load->view('admin/navbar');?>
 	<!--/ Navbar -->
 	<!-- Main Body -->
 	<div class="container-fluid">
@@ -111,7 +121,7 @@
 	<!--/ Main Body -->
 	<!-- footer -->
 	<footer class="page-footer font-small text-center pt-5" >
-		<?php $this->load->view('footer');?>
+		<?php $this->load->view('admin/footer');?>
 	</footer>
 	<!-- /footer -->
 

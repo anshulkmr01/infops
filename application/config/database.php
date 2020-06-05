@@ -81,11 +81,11 @@ $db['default'] = array(
 	'database' => 'infopexamination',
 	'dbdriver' => 'mysqli',
 	
-	// 'hostname' => '167.114.1.10',
-	// 'username' => 'infops_in',
-	// 'password' => 'Info@123',
-	// 'database' => 'infops_in',
-	// 'dbdriver' => 'sqlsrv',
+	 // 'hostname' => 'localhost:3306',
+	 // 'username' => 'infop_php',
+	 // 'password' => 'Info@123',
+	 // 'database' => 'infops_php',
+	 // 'dbdriver' => 'mysqli',
 
 	'dbprefix' => '',
 	'pconnect' => FALSE,

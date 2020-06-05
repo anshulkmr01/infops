@@ -44,7 +44,7 @@
 				}
 
 				$this->session->set_flashdata('success','You are Registered Successfully. Enjoy Your Shopping');
-				return redirect('home');
+				return redirect('examlogin');
 			}
 			else{
 				$this->session->set_flashdata('error',$result);
@@ -70,7 +70,7 @@
 						return redirect($this->session->userdata('redirect'));
 					}
 					$this->session->set_flashdata('success','Hello User! You are in');
-					return redirect('home');
+					return redirect('examlogin');
 				}
 				else{
 					$this->session->set_flashdata('error',$result);
@@ -141,7 +141,7 @@
 			$this->session->unset_userdata('userData');
 			$this->session->unset_userdata('redirect');
 			$this->session->set_flashdata('success','User Logout');
-			return redirect('home');
+			return redirect('examlogin');
 		}
 
 	}

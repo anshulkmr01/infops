@@ -352,7 +352,7 @@
 					    <br>
 				  		<label>Select a correct answer*</label>
 				  		<br>
-				  		Question Duration: <input type="time" required id="time_duration_input" name="duration">
+				  		Question Duration: <input type="time" required id="time_duration_input" name="duration"/>
 				  	</div>
 				    <button type="submit" class="btn btn-primary">Update</button>
 				  </fieldset>
@@ -404,7 +404,5 @@
 
      $("#time_duration_input").val($(this).data('duration'));
 });
-
-
 </script>
 </html>

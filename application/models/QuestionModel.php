@@ -29,12 +29,12 @@
 			$i=0;
 			$user_data = $this->session->userdata('userData');
 
-			$this->db->where('ID',$user_data['ID'])->update('student',['exam_start'=>1]);
+			$this->db->where('enrollment_no',$user_data['enrollment_no'])->update('student_doc',['exam_start'=>1]);
 
 			$all_questions = $this->db->order_by("subject", "desc")->get('question')->result_array();
 			unset($all_questions['correct_option']);
-			$student_data = $this->db->where('ID',$user_data['ID'])->get('student')->row_array();
-			$student_answer = $this->db->where('student_ID',$user_data['ID'])->get('studentanswers')->result_array();
+			$student_data = $this->db->where('enrollment_no',$user_data['enrollment_no'])->get('student_doc')->row_array();
+			$student_answer = $this->db->where('student_ID',$user_data['enrollment_no'])->get('studentanswers')->result_array();
 
 			//Itiration for Imat
 			if($user_data['catID'] == 'imat'){
@@ -94,18 +94,18 @@
 
 		function save_student_answer($question_data){
 			$user_data = $this->session->userdata('userData');
-			$question_data['student_ID'] = $user_data['ID'];
+			$question_data['student_ID'] = $user_data['enrollment_no'];
 			return $this->db->insert('studentanswers',$question_data);
 		}
 
 		function finish_exam(){
 			$user_data = $this->session->userdata('userData');
-			return $this->db->where('ID',$user_data['ID'])->update('student',['exam_end'=>1]);
+			return $this->db->where('enrollment_no',$user_data['enrollment_no'])->update('student_doc',['exam_end'=>1]);
 		}
 
 		function if_exam_started(){
 			$user_data = $this->session->userdata('userData');
-			return $this->db->where('ID',$user_data['ID'])->get('student')->row('exam_start');
+			return $this->db->where('enrollment_no',$user_data['enrollment_no'])->get('student_doc')->row('exam_start');
 		}
 
 	}

@@ -3,10 +3,10 @@
 	{
 		function student_validate($student_data){
 			//Check timing for exam first then login will proceed
-			$this->db->where('email',$student_data['email']);
-			$data = $this->db->get('student')->row_array();
+			$this->db->where('enrollment_no',$student_data['email']);
+			$data = $this->db->get('student_doc')->row_array();
 			if ($data){
-				if($data['phone'] == $student_data['password']){
+				if($data['DOB'] == $student_data['password']){
 					unset($data['password']);
 					$is_exam_running = $this->check_schedule_time();
 					if($is_exam_running == "ok"){
@@ -36,6 +36,8 @@
 		function check_schedule_time(){
 			$flag = "";
 			$exam_schedule = $this->db->where('ID',1)->get('examtiming')->row_array();
+
+			$this->session->set_userdata('exam_timing',$exam_schedule);
 			date_default_timezone_set('Asia/Kolkata');
 			
 			$datetime = new DateTime();
@@ -71,5 +73,42 @@
 			}
 			return $flag;
 		}
+
+		function paid_registered_users()
+		{
+			$this->db->order_by('enrollment_no','desc');
+			return $this->db->get('student_doc')->result_array();
+		}
+
+		function course_buyer_users()
+		{
+			$this->db->order_by('s_no','desc');
+			return $this->db->get('course_buyers')->result_array();
+		}
+
+		function view_student_data($student_enrollment)
+		{
+			return $this->db->where('enrollment_no',$student_enrollment)->get('student_doc')->row_array();
+		}
+
+		function unpaid_registered_users()
+		{
+			$this->db->order_by('ID','desc');
+			return $this->db->get('student')->result_array();
+		}
+
+		function remove_student_id($id){
+			$this->db->where('ID',$id)->delete('student');
+			return $this->db->where('student_ID',$id)->delete('student_doc');
+		}
+
+		function remove_student_enroll($enroll){
+			return $this->db->where('enrollment_no',$enroll)->delete('student_doc');
+		}
+
+		function remove_course_buyer($s_no){
+			return $this->db->where('s_no',$s_no)->delete('course_buyers');
+		}
+
 	}
 ?>

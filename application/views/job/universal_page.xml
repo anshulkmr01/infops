@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Infops Examination Portal</title>
+	<!-- Global Css using Helper -->
+	<?php 
+		infops_globalCss(); 
+	?>
+	<!--/ Global Css using Helper -->
+</head>
+<body class="inner-page">
+	<div class="full-width-header">
+		<!-- Navbar -->
+			<?php $this->load->view('navbar');?>
+		<!--/ Navbar -->
+	</div>
+
+
+    <!-- footer -->
+    	<?php $this->load->view('footer');?>
+    <!-- /footer -->
+
+</body>
+	<?php 
+		infops_globalJs(); 
+	?>
+</html>

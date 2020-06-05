@@ -69,7 +69,7 @@
 							      <td><?= $value['phone'];?></td>
 							      <td><?= $value['DOB'];?></td>
 							      <td>111</td>
-							      <td><a href="<?= base_url('student_result/'.$value['ID'].'')?>" class=" view_question"><span class="btn btn-primary btn-sm">View</span></td>
+							      <td><a href="<?= base_url('student_result/'.$value['enrollment_no'].'')?>" class=" view_question"><span class="btn btn-primary btn-sm">View</span></td>
 							    </tr>
 								<?php }} else{?>
 							    <tr class="table-warning">

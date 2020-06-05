@@ -10,7 +10,7 @@
 </head>
 <body>
 	<!-- Navbar -->
-		<?php $this->load->view('navbar');?>
+		<?php $this->load->view('admin/navbar');?>
 	<!--/ Navbar -->
 	<!-- Main Body -->
 	<div class="container-fluid">
@@ -22,7 +22,7 @@
 				    <legend>Admin Login</legend>
 				    <div class="form-group">
 				      <label for="exampleInputEmail1">Email address</label>
-				      <input type="text" name="email" class="form-control" id="exampleInputEmail1" value="<?= set_value('email'); ?>" aria-describedby="emailHelp" placeholder="Enter email">
+				      <input type="text" name="email" class="form-control" id="exampleInputEmail1" value="<?= set_value('email'); ?>" aria-describedby="emailHelp" placeholder="Enter Your">
 				      <small id="emailHelp" class="form-text text-muted"><?= form_error('email'); ?></small>
 				    </div>
 				    <div class="form-group">
@@ -40,7 +40,7 @@
 	<!--/ Main Body -->
 	<!-- footer -->
 	<footer class="page-footer font-small text-center pt-5" >
-		<?php $this->load->view('footer');?>
+		<?php $this->load->view('admin/footer');?>
 	</footer>
 	<!-- /footer -->
 
