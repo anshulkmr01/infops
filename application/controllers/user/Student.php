@@ -61,6 +61,11 @@
 			// }
 			$this->load->model('QuestionModel');
 			$question_data = $this->QuestionModel->student_question();
+			if ($question_data == "exam_end") {
+				$this->session->set_flashdata('warning','Your Exam has been submitted succesfully');
+				$this->session->unset_userdata('userData');
+		 		return redirect('examlogin');
+			}
 			$this->load->view('user/exam_board',['question_data'=>$question_data]);
 		 	}
 		 	else{

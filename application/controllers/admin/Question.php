@@ -24,7 +24,7 @@
 				$imageData = base64_encode(file_get_contents($filePath));
 
 				// Format the image SRC:  data:{mime};base64,{data};
-				$src = "data:".mime_content_type($filePath).";base64,".$imageData;
+				$src = "data:".$data['upload_data']['file_type'].";base64,".$imageData;
 				$question_data['question_image'] = $src;
 				unlink($filePath);
 			}
@@ -37,10 +37,24 @@
 				return redirect('fetch_question/'.$question_data['subject']);
 			}
 		}
+
+		function view_question($ID)
+		{
+			$query = $this->QuestionModel->view_question($ID);
+			$this->load->view('admin/view_question',['ques_data'=>$query]);
+		}
+
+		function update_paragraph()
+		{
+			$paragraph_data = $this->input->post();
+			$query = $this->QuestionModel->update_paragraph($paragraph_data);
+			$this->session->set_flashdata('success','Paragraph Updated Successfully');
+			return redirect('fetch_question/typing');
+		}
 		
 		function update_question(){
 			$question_data = $this->input->post();
-			if(!$question_data['remove_image']){
+			if(!isset($question_data['remove_image'])){
 			if($_FILES['question_image']['name']){
 				$data = $this->uploadImage('question_image','uploads');
 				if(isset($data['error'])){
@@ -53,7 +67,7 @@
 				$imageData = base64_encode(file_get_contents($filePath));
 
 				// Format the image SRC:  data:{mime};base64,{data};
-				$src = "data:".mime_content_type($filePath).";base64,".$imageData;
+				$src = "data:".$data['upload_data']['file_type'].";base64,".$imageData;
 				$question_data['question_image'] = $src;
 				unlink($filePath);
 			}

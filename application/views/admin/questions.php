@@ -78,6 +78,7 @@
 							      	<br>
 							      	<img src="<?= $value['question_image'] ?>" style="width: 300px; height: 140px">
 							      <?php } ?></td>
+							      <?php if($subject != 'typing'){?>
 							      <td><a data-toggle="modal"
 							      data-id="<?= $value['ID'] ?>"
 							      data-subject="<?= $value['subject'] ?>"
@@ -99,6 +100,9 @@
 							      data-correct_option="<?= $value['correct_option'] ?>"
 							      data-duration="<?= $value['duration'] ?>"
 							      href="#view_question" class=" view_question"><span class="btn btn-primary btn-sm">View</span></td>
+								  <?php } else { ?>
+							      <td><a href="<?= base_url('view_question/'.$value['ID'])?>" class=""><span class="btn btn-primary btn-sm">View</span></td>
+								  <?php } ?>
 							      <td><a href="<?= base_url('delete_question/'.$value['ID'].'/'.$subject)?>"><span data-toggle="modal" class="btn btn-danger btn-sm delete">Delete</span></a></td>
 							    </tr>
 								<?php } } else { ?>
@@ -250,7 +254,6 @@
 				    <div class="form-group">
 				      <legend>Question:</legend>
 				      <div id="ques_view_div"></div>
-				      <div><img src="" alt="img"></div>
 				    </div>
 				  	<div class="form-group">
 					    <ol type="a">

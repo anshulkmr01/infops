@@ -9,6 +9,16 @@
 			return $this->db->where('ID',$question_data['ID'])->update('question',$question_data);
 		}
 
+		function update_paragraph($paragraph)
+		{
+			return $this->db->where('ID',$paragraph['ID'])->update('question',$paragraph);
+		}
+
+		function view_question($ID)
+		{
+			return $this->db->where('ID',$ID)->get('question')->row_array();
+		}
+
 		function fetch_question($subject){
 				return $this->db->where('subject',$subject)->get('question')->result_array();
 		}
@@ -28,6 +38,9 @@
 		function student_question(){
 			$i=0;
 			$user_data = $this->session->userdata('userData');
+			if($this->db->where('enrollment_no',$user_data['enrollment_no'])->get('student_doc')->row('exam_end')){
+				return "exam_end";
+			}
 
 			$this->db->where('enrollment_no',$user_data['enrollment_no'])->update('student_doc',['exam_start'=>1]);
 

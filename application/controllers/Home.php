@@ -213,37 +213,37 @@
 	        $message .= "<p><b>Query: </b>".$clientData['message']."</p>";
 	        $message .= "</div>";
 
-			if($this->sendEmail('Client Query',$message)){
+			if($this->sendEmail('Client Query',$message,$clientData)){
 				$this->session->set_flashdata('success',"We have recived your message. we'll contact you soon");
 				return redirect (str_replace(base_url(),"",$this->agent->referrer()));
 			}
 
 		}
 
-		function sendEmail($subject, $message){
+		function sendEmail($subject, $message,$clientData){
 		 //Load email library
          $this->load->library('email');
 
-			$config['protocol']    = 'smtpout.secureserver.net';
+			$config['protocol']    = 'smtp';
 			$config['smtp_host']    = 'localhost';
 			$config['smtp_port']    = '25';
 			$config['smtp_timeout'] = '600';
 
-			$config['smtp_user']    = '';    //Important
-			$config['smtp_pass']    = '';  //Important
+			$config['smtp_user']    = 'support@infops.in';    //Important
+			$config['smtp_pass']    = 'Info@123';  //Important
 
 
 			$config['charset']    = 'utf-8';
 			$config['newline']    = "\r\n";
 			$config['mailtype'] = 'html'; // or html
-			$config['validation'] = TRUE; // bool whether to validate email or not 
+			$config['validation'] = FALSE; // bool whether to validate email or not 
 
 			$this->email->initialize($config);
 			$this->email->set_mailtype("html"); 
 			$this->email->set_newline("\r\n");
-
-	        $this->email->from('', 'Unicorp Website');
-	        $this->email->to('');
+			
+	        $this->email->from('support@infops.in', 'Infops');
+	        $this->email->to('support@infops.in');
 	        $this->email->subject($subject);
 	        $this->email->message($message);
 	        if($this->email->send()){

@@ -10,7 +10,7 @@
 					unset($data['password']);
 					$is_exam_running = $this->check_schedule_time();
 					if($is_exam_running == "ok"){
-						$if_exam_finish = $this->db->where('ID',$data['ID'])->get('student')->row('exam_end');
+						$if_exam_finish = $data['exam_end'];
 						if($if_exam_finish == 0){
 							$this->session->set_userdata('userData',$data);
 							return "ok";

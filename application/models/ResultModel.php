@@ -3,8 +3,17 @@
 	{
 		//Student who appeared in Exam
 		function fetch_result_student($cat){
+			if($cat == 'freelancer' or $cat == 'imat'){
 			$cat_data = $this->db->where(['catID'=>$cat, 'exam_start'=>1])->get('student_doc')->result_array();
 			return $cat_data;
+			}
+			else{
+				$this->db->where_not_in('catID','imat');
+				$this->db->where_not_in('catID','freelancer');
+				$this->db->where(['exam_start'=>1]);
+				$cat_data = $this->db->get('student_doc')->result_array();
+			return $cat_data;
+			}
 		}
 
 		function fetch_student_result($student_ID){

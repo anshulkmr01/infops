@@ -55,6 +55,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['fetch_question/(:any)'] = 'admin/Question/fetch_question/$1';
+$route['view_question/(:any)'] = 'admin/Question/view_question/$1';
+$route['update_paragraph'] = 'admin/Question/update_paragraph';
 $route['result/(:any)'] = 'admin/Result/result/$1';
 $route['student_result/(:any)'] = 'admin/Result/student_result/$1';
 $route['student_validate'] = 'user/Student/student_validate';

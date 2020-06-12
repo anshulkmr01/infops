@@ -36,7 +36,7 @@
 		<!-- Breadcrumbs End -->
 		
 		<!-- History Start -->
-        <div class="rs-history sec-spacer">
+        <div class="rs-history sec-spacer mb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
@@ -50,18 +50,16 @@
 		                </div>
                     	<div class="about-desc">
                 			<p></p>
-<p>The candidate will apply for Digital marketing Training</p>
-<p>Digital Marketing Training fee will be 387RS</p>
-<p>Once a candidate will apply for the Training candidate will able to avail the service line.</p>
-
-                    	
+							<p>The candidate will apply for Digital marketing Training</p>
+							<p>Digital Marketing Training fee will be 387RS</p>
+							<p>Once a candidate will apply for the Training candidate will able to avail the service line.</p>                    	
                         </div>
-                       
-
-                                   </div>
+                     </div>
 
 
-											<ul>
+											<div class="row container">
+												<div class="col-sm-6">
+													<ul>
 													<li>Digital Marketing Training Meaning</li>
 													<li>Plan</li>
 													<li>Design</li>
@@ -72,7 +70,10 @@
 													<li>Marketing Collateral Questionnaire</li>
 													<li>Contact information:</li>
 											</ul>
-													<p>Benefits of Marketing Material:</p>
+												</div>
+												<div class="col-sm-6">
+													
+													<p>Benefits of Marketing Material:
 											<ol>
 														<li>Increases visibility of your brand.</li>
 														<li>Develops lasting relationships with your audience.</li>
@@ -85,6 +86,9 @@
 														<li>Helps your customer move through the purchase decision more quickly.</li>
 														<li>Provides value with no strings attached</li>
 											</ol>
+										</p>
+												</div>
+											</div>
 
 
      

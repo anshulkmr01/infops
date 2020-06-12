@@ -335,22 +335,30 @@
 <!-- Testimonial End -->
         <div class="container-fluid pt-5 pb-5 mb-5">
                 <div class="sec-title mb-50 text-center">
-                    <h2 class="">Employeres of Choice</h2>   <!--    
+                    <h2 class="">Employeres' Choice</h2>   <!--    
                     <p class="">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p> -->
                 </div>
                 <div class="clients mb-3">
                     <section class="customer-logos slider">
-                      <div class="slide"><img src="assets/img/clients/wipro.jpg" alt="wipro"></div>
+                      <div class="slide"><img src="assets/img/clients/wipro.jpg" alt="Wipro"></div>
                       <div class="slide"><img src="assets/img/clients/cong.png" alt="Congnizent"></div>
+                      <div class="slide"><img src="assets/img/clients/axis.jpg" alt="Congnizent"></div>
                       <div class="slide"><img src="assets/img/clients/harman.jpg" alt="Harman"></div>
                       <div class="slide"><img src="assets/img/clients/ntt.jpg" alt="NTT"></div>
                       <div class="slide"><img src="assets/img/clients/quest.jpg" alt="Quest"></div>
                       <div class="slide"><img src="assets/img/clients/synechron.png" alt="Synechron"></div>
-                      <div class="slide"><img src="assets/img/clients/yash.png" alt="yash"></div>
+                      <div class="slide"><img src="assets/img/clients/yash.png" alt="Yash"></div>
                       <div class="slide"><img src="assets/img/clients/tcs.png" alt="TCS"></div>
                       <div class="slide"><img src="assets/img/clients/IDBI.jpg" alt="IDBI"></div>
                       <div class="slide"><img src="assets/img/clients/hdfc.jpg" alt="HDFC"></div>
                       <div class="slide"><img src="assets/img/clients/hcl.png" alt="HCL"></div>
+                      <div class="slide"><img src="assets/img/clients/sbi.jpg" alt="SBI"></div>
+                      <div class="slide"><img src="assets/img/clients/india-mart.jpg" alt="India Mark"></div>
+                      <div class="slide"><img src="assets/img/clients/titan.jpg" alt="Titan"></div>
+                      <div class="slide"><img src="assets/img/clients/clutchgroup.jpg" alt="Clutch Group"></div>
+                      <div class="slide"><img src="assets/img/clients/cms.jpg" alt="CMS"></div>
+                      <div class="slide"><img src="assets/img/clients/cocacola.jpg" alt="Coca Cola"></div>
+                      <div class="slide"><img src="assets/img/clients/daimler.jpg" alt="Daimler"></div>
                    </section>
                 </div>
         </div>

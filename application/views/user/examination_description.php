@@ -20,7 +20,7 @@ body{
 </style>
 <body>
 	<!-- Navbar -->
-		<?php $this->load->view('admin/navbar');?>
+		<?php $this->load->view('examlogin/navbar');?>
 	<!--/ Navbar -->
 	<!-- Main Body -->
 	<div class="container-fluid">
@@ -43,7 +43,7 @@ body{
 	<!--/ Main Body -->
 	<!-- footer -->
 	<footer class="page-footer font-small text-center pt-5" >
-		<?php $this->load->view('admin/footer');?>
+		<?php $this->load->view('examlogin/footer');?>
 	</footer>
 	<!-- /footer -->
 

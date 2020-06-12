@@ -176,7 +176,7 @@ body{
 
 <script type="text/javascript">
 	
-const setOfWords = ["<?= $value['question']?>"];
+const setOfWords = [`<?= $value['question']?>`];
 
 const msg = document.getElementById('msg');
 const typeWords = document.getElementById('mywords');

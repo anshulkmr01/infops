@@ -3,7 +3,17 @@
   $user_session_data = null;
   $user_session_data = $this->session->userdata('new_student_user_data');
 ?>
-
+<style type="text/css">
+    body{
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>
+<script type="text/javascript">
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
     <!--Preloader area start here-->
     <div class="book_preload">
         <div class="book">
