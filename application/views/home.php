@@ -335,7 +335,7 @@
 <!-- Testimonial End -->
         <div class="container-fluid pt-5 pb-5 mb-5">
                 <div class="sec-title mb-50 text-center">
-                    <h2 class="">Employeres' Choice</h2>   <!--    
+                    <h2 class="">Employer's Choice</h2>   <!--    
                     <p class="">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p> -->
                 </div>
                 <div class="clients mb-3">

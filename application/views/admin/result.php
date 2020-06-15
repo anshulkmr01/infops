@@ -68,7 +68,7 @@
 							      <td><?= $value['email'];?></td>
 							      <td><?= $value['phone'];?></td>
 							      <td><?= $value['DOB'];?></td>
-							      <td>111</td>
+							      <td><?= $value['enrollment_no'];?></td>
 							      <td><a href="<?= base_url('student_result/'.$value['enrollment_no'].'')?>" class=" view_question"><span class="btn btn-primary btn-sm">View</span></td>
 							    </tr>
 								<?php }} else{?>

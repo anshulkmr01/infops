@@ -21,10 +21,8 @@
 			$this->form_validation->set_rules('lname', 'Last Nam', 'required',['required'=>'%s is Required']);
 			$this->form_validation->set_rules('email', 'Email', 'required',['required'=>'%s is Required']);
 			$this->form_validation->set_rules('DOB', 'Date of Birth', 'required',['required'=>'%s is Required']);
-			$this->form_validation->set_rules('phone', 'Phon', 'required',['required'=>'%s is Required']);
+			$this->form_validation->set_rules('phone', 'Phone Number', 'required',['required'=>'%s is Required']);
 			$this->form_validation->set_rules('is_checked', 'Accept', 'required',['required'=>'%s and agree T&C']);
-			//$this->form_validation->set_rules('captcha', 'Captcha', 'required',['required'=>'%s is Required']);
-
 
 			$student_data = $this->input->post();
 			$sessCaptcha = $this->session->userdata('captchaCode');
@@ -32,6 +30,20 @@
 			if($student_data['captcha'] !== $sessCaptcha){
 				$this->form_validation->set_rules('captcha1', 'Captcha', 'required',['required'=>'Incorrect %s']);
             }
+            if($student_data['phone'] != ""){
+            if(!preg_match('/^[0-9]{10}+$/', $student_data['phone'])){
+				$this->form_validation->set_rules('phone1', 'Phone Number is not Correct', 'required',['required'=>' %s']);
+            }
+        	}
+            if($student_data['email'] != ""){
+            	$email_input = strtolower($student_data['email']);
+            	$explode = explode('@', $email_input);
+            	$domain = $explode[1];
+            if($domain != 'gmail.com' && $domain != 'rediff.com' && $domain != 'yahoo.com' && $domain != 'linkedin.com' && $domain != 'outook.com'&& $domain != 'live.com'){
+				$this->form_validation->set_rules('valid_email', 'Enter a valid email', 'required',['required'=>' %s']);
+            }
+        	}
+
 
 			if($this->form_validation->run()){
             unset($student_data['captcha']);            
@@ -90,9 +102,24 @@
 			$this->form_validation->set_rules('phone', 'Phone', 'required',['required'=>'%s is Required']);
 			$this->form_validation->set_rules('location', 'Location', 'required',['required'=>'%s is Required']);
 
-			if($this->form_validation->run()):
 			
 			$input_data = $this->input->post();
+
+            if($input_data['phone'] != ""){
+            if(!preg_match('/^[0-9]{10}+$/', $input_data['phone'])){
+				$this->form_validation->set_rules('phone1', 'Phone Number is not Correct', 'required',['required'=>' %s']);
+            }
+        	}
+            if($input_data['email'] != ""){
+            	$email_input = strtolower($input_data['email']);
+            	$explode = explode('@', $email_input);
+            	$domain = $explode[1];
+            if($domain != 'gmail.com' && $domain != 'rediff.com' && $domain != 'yahoo.com' && $domain != 'linkedin.com' && $domain != 'outook.com'&& $domain != 'live.com'){
+				$this->form_validation->set_rules('valid_email', 'Enter a valid email', 'required',['required'=>' %s']);
+            }
+        	}
+        	
+			if($this->form_validation->run()):
 
 			if($_FILES){
 			foreach ($_FILES as $key => $value) {
@@ -132,7 +159,7 @@
 				$this->session->set_flashdata('warning',"Please Login or register yourself First");
 				return redirect('/');
 	  			}
-				$this->load->view('document_registration_form');
+				$this->load->view('document_registration_form',['catID'=>$input_data['catID']]);
 			endif;
 		}
 

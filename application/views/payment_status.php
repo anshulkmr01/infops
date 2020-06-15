@@ -3,7 +3,7 @@
 <head>
 	<title>Infops Examination Portal</title>
 	<!-- Global Css using Helper -->
-	<?php /* 
+	<?php
 		infops_globalCss();
 	?>
 	<!--/ Global Css using Helper -->
@@ -48,7 +48,7 @@
             		<h3 class="text-success">Payment Success</h3>
             		<h4>Your Transaction ID for this transaction is: <?= $student_data['txt_ID'] ?></h4>
             		<h4>Amount Recived : <?= $student_data['amount_recived'] ?></h4>
-            		<small>Please Note down your Transaction ID</small>
+            		<h3>Please Note down your Transaction ID: <?= $student_data['enrollment_no'] ?></h3>
             	</center>
             	<?php
  		       }
@@ -63,6 +63,5 @@
 </body>
 	<?php 
 		infops_globalJs(); 
-		*/
 	?>
 </html>
