@@ -118,7 +118,7 @@
 
 		function if_exam_started(){
 			$user_data = $this->session->userdata('userData');
-			return $this->db->where('enrollment_no',$user_data['enrollment_no'])->get('student_doc')->row('exam_start');
+			return $this->db->where('enrollment_no',$user_data['enrollment_no'])->get('student_doc')->row_array();
 		}
 
 	}

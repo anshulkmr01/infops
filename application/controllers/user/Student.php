@@ -40,10 +40,12 @@
 
 		 	if($this->session->userdata('userData')){
 			$this->load->model('QuestionModel');
-			if($this->QuestionModel->if_exam_started()){
+			$query = $this->QuestionModel->if_exam_started();
+
+			if($query['exam_start']){
 				return redirect('start_question_paper');
 			}
-				$this->load->view('user/examination_description');
+				$this->load->view('user/examination_description',['catID'=>$query['catID']]);
 		 	}
 		 	else{
 		 		return redirect('examlogin');
