@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -156,3 +157,12 @@ $route['payment_failure'] = 'apply_online/Student_Registrtion/payment_failure';
 //Student Registration or login
 
 $route['contact_us_email'] = 'Home/contact_us_email';
+
+$route['merchant'] = 'advertisement/Merchant';
+$route['merchant_registration'] = 'advertisement/Merchant/merchant_registration';
+$route['existing_merchant_payment'] = 'advertisement/Merchant/existing_merchant';
+$route['merchant_login'] = 'advertisement/Merchant/merchant_login';
+$route['merchant_payment'] = 'advertisement/Merchant/merchant_payment';
+$route['merchant_payment_success'] = 'advertisement/Merchant/merchant_payment_success';
+$route['merchant_payment_failure'] = 'advertisement/Merchant/merchant_payment_failure';
+$route['merchant_logout'] = 'advertisement/Merchant/merchant_logout';

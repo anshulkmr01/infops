@@ -11,7 +11,9 @@
       </li> -->
       </ul>
       <span class="form-inline my-2 my-lg-0">
-        <a href="<?= base_url('admin_logout')?>"><button class="btn btn-secondary my-2 my-sm-0" type="button">Logout</button></a>
+        <?php if ($this->session->userdata('adminData')): ?>
+         <a href="<?= base_url('admin_logout')?>"><button class="btn btn-secondary my-2 my-sm-0" type="button">Logout</button></a>
+        <?php endif ?>
       </form>
   </div>
 </nav>

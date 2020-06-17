@@ -253,11 +253,6 @@
 
         function payment_success()
         {
-
-        	// echo "<pre>";
-        	// print_r($_POST);
-        	// exit();
-
         	$is_hash_match = false;
 
     		$status=$_POST["status"];
