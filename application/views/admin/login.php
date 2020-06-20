@@ -15,9 +15,9 @@
 	<!-- Main Body -->
 	<div class="container-fluid">
 		<div class="row mt-5 pt-5">
-			<div class="col-sm-3 col-md-3 col-lg-4"></div>
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<form action="admin_validate" method="post">
+			<div class="col-sm-1 col-md-2 col-lg-3"></div>
+			<div class="col-sm-10 col-md-8 col-lg-5">
+				<form action="admin_validate" method="post"  class="border p-5">
 				  <fieldset>
 				    <legend>Admin Login</legend>
 				    <div class="form-group">
@@ -34,7 +34,7 @@
 				  </fieldset>
 				</form>
 			</div>
-			<div class="col-sm-3 col-md-3 col-lg-4"></div>
+			<div class="col-sm-1 col-md-2 col-lg-4"></div>
 		</div>
 	</div>
 	<!--/ Main Body -->

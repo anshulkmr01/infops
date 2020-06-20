@@ -166,3 +166,6 @@ $route['merchant_payment'] = 'advertisement/Merchant/merchant_payment';
 $route['merchant_payment_success'] = 'advertisement/Merchant/merchant_payment_success';
 $route['merchant_payment_failure'] = 'advertisement/Merchant/merchant_payment_failure';
 $route['merchant_logout'] = 'advertisement/Merchant/merchant_logout';
+
+$route['merchant_list'] = 'advertisement/Merchant_Admin';
+$route['delete_merchent/(:any)'] = 'advertisement/Merchant_Admin/delete_merchent/$1';

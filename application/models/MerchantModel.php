@@ -50,7 +50,19 @@
 
 		function update_merchant_payment_status($merchant_ID,$txnid,$amount,$productinfo)
 		{
-			return $this->db->where('ID',$merchant_ID)->update('merchant',['txnid'=>$txnid,'amount'=>$amount, 'package'=>$productinfo]);
+		date_default_timezone_set('Asia/Kolkata');
+		$package_start = date('d-m-Y');
+			return $this->db->where('ID',$merchant_ID)->update('merchant',['txnid'=>$txnid,'amount'=>$amount, 'package'=>$productinfo,'package_start'=>$package_start]);
+		}
+
+		function fetch_merchant()
+		{
+			return $this->db->get('merchant')->result();
+		}
+
+		public function delete_merchent($value)
+		{
+			return $this->db->where('ID',$value)->delete('merchant');
 		}
 	}
 ?>

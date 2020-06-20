@@ -72,6 +72,10 @@
 		}
 
 	?>
+		<?php
+		//Fee Payble Amout
+		$fee = 300;
+		?>
 <script>
     var hash = '<?php echo $hash ?>';
     function submitPayuForm() {
@@ -81,6 +85,28 @@
       var payuForm = document.forms.payuForm;
       payuForm.submit();
     }
+
+function package_price(val){
+		var product_amount = document.getElementById('product_amount');
+		var final_price = document.getElementById('final_price');
+	
+		if(val == 'Silver Package'){
+			product_amount.value = '300';
+			final_price.innerHTML = '300';
+		}
+		if(val == 'Gold Package'){
+			product_amount.value = '600';
+			final_price.innerHTML = '600';
+		}
+		if(val == 'Dimond Package'){
+			product_amount.value = '900';
+			final_price.innerHTML = '900';
+		}
+		if(val == 'Platinum Package'){
+			product_amount.value = '1200';
+			final_price.innerHTML = '1200';
+		}
+	}
 </script>
 </head>
   
@@ -93,10 +119,6 @@
 		<div class="row mt-5">
 			<div class="col-1 pt-5"></div>
 			<div class="col-sm-5 col-md-5 col-lg-4 pt-5">
-				<?php
-            	//Fee Payble Amout
-            	$fee = 387;
-            	?>
             	<legend>Select Package & pay</legend>
 				<div class="form-group">
 				  <label>Merchant Details:-</label><br>
@@ -106,7 +128,7 @@
 				  <label for="">Select Your Advertisement Package:</label>
 				</div>
             	<form action="<?php echo $action; ?>" method="post" name="payuForm">
-            	 <select name="productinfo" class="form-control">
+            	 <select name="productinfo" class="form-control" oninput="package_price(this.value);">
 				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Silver Package') echo 'selected' ?> value="Silver Package">Silver</option>
 				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Gold Package') echo 'selected' ?> value="Gold Package">Gold</option>
 				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Dimond Package') echo 'selected' ?> value="Dimond Package">Dimond</option>
@@ -122,7 +144,7 @@
 				        </tr>
 				        <tr>
 				          <td><!-- Amount:  --></td>
-				          <td><input type="hidden" name="amount" value="<?= $fee; ?>" /></td>
+				          <td><input type="hidden" name="amount" value="<?php if(isset($_POST['amount'])) echo $_POST['amount']; else echo $fee; ?>" id="product_amount"/></td>
 				          <td><!-- First Name:  --></td>
 				          <td><input type="hidden" name="firstname" id="firstname" value="<?= $merchant_data['name']?>" /></td>
 				        </tr>
@@ -151,15 +173,16 @@
 				          <td colspan="3"><input type="hidden" name="service_provider" value="payu_paisa" size="64" /></td>
 				        </tr>
 				          <?php if(!$hash) { ?>
-				            <td colspan="4"><input type="submit" value="Pay Now" class="btn btn-primary" /> <b><?= $fee; ?></b> INR as Fee  </td>
+				            <td colspan="4"><input type="submit" value="Pay Now" class="btn btn-primary" /> <b id="final_price"><?= $fee; ?></b> INR as Fee  </td>
 				          <?php } ?>
 				        </tr>
 				      </table>
 				</form>
 			</div>
 			<div class="col-sm-1 col-md-1 col-lg-3 pt-5"></div>
+			<?php if (isset($merchant_data['package'])): ?>
 			<div class="col-sm-5 col-md-5 col-lg-4 pt-5">
-				<legend>Package Detail</legend>
+				<legend>Package Details</legend>
 				<table class="table">
 					<thead>
 					<tr>
@@ -169,14 +192,15 @@
 					</tr>
 					<tbody>
 						<tr>
-							<td>s</td>
-							<td>s</td>
-							<td>s</td>
+							<td><?= $merchant_data['package'] ?></td>
+							<td><?= date('d/m/Y',strtotime($merchant_data['package_start'])) ?></td>
+							<td><?= date('d/m/Y', strtotime($merchant_data['package_start']. ' + 30 days')) ?></td>
 						</tr>
 					</tbody>
 					</thead>
 				</table>
 			</div>
+			<?php endif ?>
 		</div>
 	</div>
 	<!--/ Main Body -->
