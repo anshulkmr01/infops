@@ -46,7 +46,12 @@
 	{
 		?>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+				<!-- FontAwsome Icons -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<?= link_tag("assets/css/custom-css.css")?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- favicon -->
         <link rel="apple-touch-icon" href="<?= base_url('assets/infops/')?>apple-touch-icon.png">
@@ -111,6 +116,7 @@
         <script src="<?= base_url('assets/infops/')?>js/plugins.js"></script>
 		 <!-- main js -->
         <script src="<?= base_url('assets/infops/')?>js/main.js"></script>
+
 		<?php
 	}
 ?>

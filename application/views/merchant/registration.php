@@ -17,9 +17,9 @@
 		<div class="row mt-5 pt-5">
 			<div class="col-1"></div>
 			<div class="col-sm-12 col-md-10 col-lg-7">
+				<legend>Merchant Registration</legend>
 				<form method="post" action="<?= base_url('merchant_registration')?>" class="border p-5">
 				  <fieldset>
-				    <legend>Merchant Registration</legend>
 				    <div class="row">
 					    <div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
@@ -247,9 +247,13 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Area Range*</label>
-						      <input type="range" name="area_range" class="custom-range" value="0"  min="0" max="15" step="3" oninput="updateTextInput(this.value);">
-						      <div><span id="range_val">0 KM</span></div>
-						      <small id="" class="form-text text-muted"><?= form_error('area_range'); ?></small>
+						      <select name="area_range" class="form-control">
+						      	<option value="">Select Area</option>
+						      	<option>2 KM</option>
+						      	<option>5 KM</option>
+						      	<option>15 KM</option>
+						      	<option>PEN India</option>
+						      </select>
 						    </div>
 						</div>
 				    </div>

@@ -55,7 +55,7 @@
 			return $this->db->where('ID',$merchant_ID)->update('merchant',['txnid'=>$txnid,'amount'=>$amount, 'package'=>$productinfo,'package_start'=>$package_start]);
 		}
 
-		function fetch_merchant()
+		public function fetch_merchant()
 		{
 			return $this->db->get('merchant')->result();
 		}
@@ -63,6 +63,31 @@
 		public function delete_merchent($value)
 		{
 			return $this->db->where('ID',$value)->delete('merchant');
+		}
+
+		public function view_merchent($value){
+			return $this->db->where('ID',$value)->get('merchant')->row_array();
+		}
+
+		public function ad_upload($value)
+		{
+			return $this->db->insert('advertisement',$value);
+		}
+
+		public function merchant_ad($value)
+		{
+			$query = $this->db->where('merchent_ID',$value)->get('advertisement')->result();
+			return $query;
+		}
+
+		public function change_ad_status($ID, $status_update)
+		{
+			return $this->db->where('ID',$ID)->update('advertisement',['is_active'=>$status_update]);
+		}
+
+		public function delete_merchant_ad($ID)
+		{
+			return $this->db->where('ID',$ID)->delete('advertisement');
 		}
 	}
 ?>

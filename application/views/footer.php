@@ -1,7 +1,47 @@
 <?php
   $user_session_data = null;
   $user_session_data = $this->session->userdata('new_student_user_data');
+  $b_strip_ad = $this->advertisement->view_platinum_ad();
+  $l_strip_ad = $this->advertisement->silver_gold_ad();
+  $r_strip_ad = $this->advertisement->silver_gold_ad();
 ?>
+        <!-- Advertisement section -->
+        <?php if ($b_strip_ad): ?>
+            <div class="b-strip">
+            <span class="close-b-strip close-banner"><i class="far fa-times-circle"></i></span>
+            <a href="<?= $b_strip_ad['web_URL']?>">
+                <?= $b_strip_ad['ad_title'] ?>
+                <img src="<?= base_url($this->config->item('ad_files').'/'.$b_strip_ad['ad_file_name'])?>">
+            </a>
+        </div>
+        <?php endif ?>
+        <!-- Advertisement section end -->
+
+        <!-- Right advertisement -->
+        <?php if ($r_strip_ad): ?>
+        <div class="r-strip">
+            <span class="close-r-strip close-banner"><i class="far fa-times-circle"></i></span>
+            <a href="<?= $r_strip_ad['web_URL']?>">
+                <?= $r_strip_ad['ad_title'] ?>
+                <img src="<?= base_url($this->config->item('ad_files').'/'.$r_strip_ad['ad_file_name'])?>">
+            </a>
+        </div>
+            
+        <?php endif ?>
+        <!-- Right advertisement -->
+
+        <!-- Left advertisement -->
+        <?php if ($l_strip_ad): ?>
+        <div class="l-strip">
+            <span class="close-l-strip close-banner"><i class="far fa-times-circle"></i></span>
+            <a href="<?= $l_strip_ad['web_URL']?>">
+                <?= $l_strip_ad['ad_title'] ?>
+                <img src="<?= base_url($this->config->item('ad_files').'/'.$l_strip_ad['ad_file_name'])?>">
+            </a>
+        </div>
+        <?php endif ?>
+        <!-- Left advertisement -->
+
         <!-- Footer Start -->
         <footer id="rs-footer" class="bg3 rs-footer">
 		      	<!-- Footer Top -->
@@ -87,7 +127,7 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="copyright">
-                        <p>© 2020 <a href="#">infops</a>. All Rights Reserved.</p>
+                        <p>© 2020 <a href="#">Infops</a>. All Rights Reserved.</p> Powered by <a href="https://kbrostechno.com">Kbros technologies</a>
                     </div>
                 </div>
             </div>

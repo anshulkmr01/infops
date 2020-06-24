@@ -19,3 +19,45 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.b-strip{
+	position: relative;
+	z-index: 999;
+    position: fixed;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 20%;
+}
+.r-strip{
+	position: relative;
+	z-index: 999;
+    position: fixed;
+    right: 0px;
+    top: 175px;
+    display: block;
+    width: 10%;
+}
+.l-strip{
+	position: relative;
+	z-index: 999;
+    position: fixed;
+    left: 0px;
+    top: 175px;
+    display: block;
+    width: 10%;
+}
+.b-strip img, .r-strip img, .l-strip img{
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+.close-banner{
+	position: absolute;
+}
+.close-banner{
+	cursor: pointer;
+	top: 5px;
+	right: 5px;
+}

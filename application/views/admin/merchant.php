@@ -43,7 +43,7 @@
 				<div class="container">
 					<h3>Merchants</h3>
 					<?php if (isset($merchant_data) && $merchant_data!=null): ?>
-					<table class="table table-hover">
+					<table class="table table-hover table-responsive">
 						<thead>
 							<tr class="table-primary">
 								<th scope="col">S No.</th>
@@ -66,17 +66,14 @@
 								<th scope="col">Amount</th>
 								<th scope="col">Start Date</th>
 								<th scope="col">Txn ID</th>
-								<th scope="col">Action</th>
+								<th scope="col" colspan="2">Action</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
 							$i=0;
-							$sum = 0;
 							 foreach ($merchant_data as $key => $value):
 							 	$i++;
-							 	$sum += $i;
-
 							  ?>
 								<tr class="table-light">
 								<td scope="col"><?= $i; ?></td>
@@ -96,21 +93,18 @@
 								<td scope="col"><?= $value->business_nature; ?></td>
 								<td scope="col"><?= $value->area_range; ?></td>
 								<td scope="col"><?= $value->package; ?></td>
-								<td scope="col"><?= $value->amount; ?></td>
+								<td scope="col"  <?php if($value->amount == 0) echo('style="background:#ff7d7d"'); ?>><?= $value->amount; ?></td>
 								<td scope="col"><?= date('d/m/Y', strtotime($value->package_start)); ?></td>
 								<td scope="col"><?= $value->txnid; ?></td>
+								<td scope="col">
+									<a href="<?= base_url('view_merchent/'.$value->ID.'')?>" class="btn btn-primary">View</a>
+								</td>
 								<td scope="col">
 									<a href="<?= base_url('delete_merchent/'.$value->ID.'')?>" class="btn-danger delete btn btn-sm">Delete</a>
 								</td>
 							</tr>
 							<?php endforeach ?>
 						</tbody>
-						<tfoot>
-							<tr class="table-light" style="font-weight: bold;">
-								<td scope="col">Total:</td>
-								<td scope="col" colspan="20"><?= $sum; ?> Merchant/s</td>
-							</tr>
-						</tfoot>
 					</table>
 					<?php else: ?>
 						<label>No Merchent Register yet...</label>

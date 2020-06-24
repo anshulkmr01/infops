@@ -1,14 +1,4 @@
-﻿/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : Edulearn | Responsive Education HTML5 Template 
-* Author : rs-theme
-* Author URI : http://www.rstheme.com/
-*
-* -----------------------------------------------------------------------------
-*
-**/
+﻿
 
 (function($) {
     "use strict";
@@ -373,3 +363,15 @@
 	
 
 })(jQuery);
+
+$(document).ready(function(){
+  $(".close-b-strip").click(function(){
+    $(".b-strip").hide();
+  });
+  $(".close-l-strip").click(function(){
+    $(".l-strip").hide();
+  });
+  $(".close-r-strip").click(function(){
+    $(".r-strip").hide();
+  });
+});

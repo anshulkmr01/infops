@@ -13,7 +13,8 @@
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Infops Examination Portal</a>
+  <a class="navbar-brand" href="<?= base_url('/')?>">
+    <img src="<?= base_url('assets/infops/')?>images/logo-white.png" alt="Infops" class="w-75"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

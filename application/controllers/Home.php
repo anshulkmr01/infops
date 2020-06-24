@@ -1,6 +1,14 @@
 <?php
 	class Home extends CI_Controller
 	{
+		function check()
+		{
+			$this->load->model('AdvertisementModel');
+			$query = $this->AdvertisementModel->view_platinum_ad();
+			echo "<pre>";
+			print_r($query);
+		}
+		
 		function index()
 		{
 			$this->load->view('home');

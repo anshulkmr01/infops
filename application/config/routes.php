@@ -169,3 +169,7 @@ $route['merchant_logout'] = 'advertisement/Merchant/merchant_logout';
 
 $route['merchant_list'] = 'advertisement/Merchant_Admin';
 $route['delete_merchent/(:any)'] = 'advertisement/Merchant_Admin/delete_merchent/$1';
+$route['view_merchent/(:any)'] = 'advertisement/Merchant_Admin/view_merchent/$1';
+$route['ad_upload'] = 'advertisement/Merchant_Admin/ad_upload';
+$route['change_ad_status/(:any)/(:any)'] = 'advertisement/Merchant_Admin/change_ad_status/$1/$2';
+$route['delete_merchant_ad/(:any)/(:any)'] = 'advertisement/Merchant_Admin/delete_merchant_ad/$1/$2';

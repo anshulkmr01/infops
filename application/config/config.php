@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/infopexamination';
-//$config['base_url'] = 'https://infops.in';
+//$config['base_url'] = 'http://localhost/infopexamination';
+$config['base_url'] = 'https://infops.in';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -223,7 +223,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -522,3 +522,4 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 $config['document_path'] = 'uploads/documents/';
+$config['ad_files'] = 'uploads/ad_files';

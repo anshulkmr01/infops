@@ -12,8 +12,8 @@
 		$SALT = "gTpj7PRi2P";
 		// Merchant Key and Salt as provided by Payu.
 
-		$PAYU_BASE_URL = "https://sandboxsecure.payu.in";   // For Sandbox Mode
-		//$PAYU_BASE_URL = "https://secure.payu.in";      // For Production Mode
+		//$PAYU_BASE_URL = "https://sandboxsecure.payu.in";   // For Sandbox Mode
+		$PAYU_BASE_URL = "https://secure.payu.in";      // For Production Mode
 
 		$action = '';
 
@@ -90,19 +90,19 @@ function package_price(val){
 		var product_amount = document.getElementById('product_amount');
 		var final_price = document.getElementById('final_price');
 	
-		if(val == 'Silver Package'){
+		if(val == 'silver'){
 			product_amount.value = '300';
 			final_price.innerHTML = '300';
 		}
-		if(val == 'Gold Package'){
+		if(val == 'gold'){
 			product_amount.value = '600';
 			final_price.innerHTML = '600';
 		}
-		if(val == 'Dimond Package'){
+		if(val == 'diamond'){
 			product_amount.value = '900';
 			final_price.innerHTML = '900';
 		}
-		if(val == 'Platinum Package'){
+		if(val == 'platinum'){
 			product_amount.value = '1200';
 			final_price.innerHTML = '1200';
 		}
@@ -129,10 +129,10 @@ function package_price(val){
 				</div>
             	<form action="<?php echo $action; ?>" method="post" name="payuForm">
             	 <select name="productinfo" class="form-control" oninput="package_price(this.value);">
-				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Silver Package') echo 'selected' ?> value="Silver Package">Silver</option>
-				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Gold Package') echo 'selected' ?> value="Gold Package">Gold</option>
-				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Dimond Package') echo 'selected' ?> value="Dimond Package">Dimond</option>
-				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'Platinum Package') echo 'selected' ?> value="Platinum Package">Platinum</option>
+				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'silver') echo 'selected' ?> value="silver">Silver</option>
+				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'gold') echo 'selected' ?> value="gold">Gold</option>
+				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'diamond') echo 'selected' ?> value="diamond">Diamond</option>
+				  	<option <?php if(isset($_POST['productinfo']) && $_POST['productinfo'] == 'platinum') echo 'selected' ?> value="platinum">Platinum</option>
 				  </select>
 
 				      <input type="hidden" name="key" value="<?php echo $MERCHANT_KEY ?>" />

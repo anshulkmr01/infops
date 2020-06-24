@@ -15,13 +15,13 @@
     document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
     <!--Preloader area start here-->
-    <div class="book_preload">
+    <!-- <div class="book_preload">
         <div class="book">
             <div class="book__page"></div>
             <div class="book__page"></div>
             <div class="book__page"></div>
         </div>
-    </div>
+    </div> -->
     <!-- Preloader are end here -->
     
     <!-- Toolbar Start -->
@@ -69,7 +69,7 @@
                         <div class="row rs-vertical-middle">
                             <div class="col-lg-3 col-md-12">
                                 <div class="logo-area">
-                                    <a href="<?= base_url('/')?>"><img src="<?= base_url('assets/infops/')?>images/logo-white.png" alt="logo"></a>
+                                    <a href="<?= base_url('/')?>"><img src="<?= base_url('assets/infops/')?>images/logo-white.png" alt="Infops"></a>
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-12">
