@@ -24,69 +24,69 @@
 					    <div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Full Name*</label>
-						      <input type="text" name="name" class="form-control" id="name" value="<?= set_value('name'); ?>" aria-describedby="nameHelp" placeholder="Full Name">
+						      <input required type="text" name="name" class="form-control" id="name" value="<?= set_value('name'); ?>" aria-describedby="nameHelp" placeholder="Full Name">
 						      <small id="nameHelp" class="form-text text-muted"><?= form_error('name'); ?></small>
 						    </div>
 						</div>
 					    <div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Email*</label>
-						      <input type="email" name="email" class="form-control" id="email" value="<?= set_value('email'); ?>" aria-describedby="emailHelp" placeholder="Email Address">
+						      <input required type="email" name="email" class="form-control" id="email" value="<?= set_value('email'); ?>" aria-describedby="emailHelp" placeholder="Email Address">
 						      <small id="emailHelp" class="form-text text-muted"><?= form_error('email'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Phone Number*</label>
-						      <input type="number" name="phone" class="form-control" id="phone" value="<?= set_value('phone'); ?>" aria-describedby="phoneHelp" placeholder="Phone Number" pattern="[0-9]{10}">
+						      <input required type="number" name="phone" class="form-control" id="phone" value="<?= set_value('phone'); ?>" aria-describedby="phoneHelp" placeholder="Phone Number" pattern="[0-9]{10}">
 						      <small id="phoneHelp" class="form-text text-muted"><?= form_error('phone'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Business Name*</label>
-						      <input type="text" name="business_name" class="form-control" id="business_name" value="<?= set_value('business_name'); ?>" aria-describedby="business_nameHelp" placeholder="Business Name">
+						      <input required type="text" name="business_name" class="form-control" id="business_name" value="<?= set_value('business_name'); ?>" aria-describedby="business_nameHelp" placeholder="Business Name">
 						      <small id="business_nameHelp" class="form-text text-muted"><?= form_error('business_name'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Business Address*</label>
-						      <textarea name="business_address" class="form-control" placeholder="Business Address" id="business_address"><?= set_value('business_address'); ?></textarea>
+						      <textarea required name="business_address" class="form-control" placeholder="Business Address" id="business_address"><?= set_value('business_address'); ?></textarea>
 						      <small id="business_addressHelp" class="form-text text-muted"><?= form_error('business_address'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Land Mark*</label>
-						      <input type="text" name="business_landmark" class="form-control" id="business_landmark" value="<?= set_value('business_landmark'); ?>" aria-describedby="" placeholder="Landmark">
+						      <input required type="text" name="business_landmark" class="form-control" id="business_landmark" value="<?= set_value('business_landmark'); ?>" aria-describedby="" placeholder="Landmark">
 						      <small id="" class="form-text text-muted"><?= form_error('business_landmark'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">City*</label>
-						      <input type="text" name="business_city" class="form-control" id="business_city" value="<?= set_value('business_city'); ?>" aria-describedby="" placeholder="City">
+						      <input required type="text" name="business_city" class="form-control" id="business_city" value="<?= set_value('business_city'); ?>" aria-describedby="" placeholder="City">
 						      <small id="" class="form-text text-muted"><?= form_error('business_city'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Pin Code*</label>
-						      <input type="number" name="business_pin" class="form-control" id="business_pin" value="<?= set_value('business_pin'); ?>" aria-describedby="" placeholder="PIN Code">
+						      <input required type="number" name="business_pin" class="form-control" id="business_pin" value="<?= set_value('business_pin'); ?>" aria-describedby="" placeholder="PIN Code">
 						      <small id="" class="form-text text-muted"><?= form_error('business_pin'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Date of Business Establish*</label>
-						      <input type="date" name="business_establish_date" class="form-control" id="business_establish_date" value="<?= set_value('business_establish_date'); ?>" aria-describedby="">
+						      <input required type="date" name="business_establish_date" class="form-control" id="business_establish_date" value="<?= set_value('business_establish_date'); ?>" aria-describedby="">
 						      <small id="" class="form-text text-muted"><?= form_error('business_establish_date'); ?></small>
 						    </div>
 						</div>
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
-						      <label for="name">GST Number(optional)</label>
+						      <label for="name">GST Number (Optional)</label>
 						      <input type="text" name="GST_number" class="form-control" id="GST_number" value="<?= set_value('GST_number'); ?>" aria-describedby="" placeholder="GSTIN">
 						      <small id="" class="form-text text-muted"><?= form_error('GST_number'); ?></small>
 						    </div>
@@ -94,7 +94,7 @@
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Business Nature*</label>
-						      <select type="text" name="business_nature" class="form-control">
+						      <select required type="text" name="business_nature" class="form-control">
 						      	<option value="">Select from drop down</option>
 						      	<option>ACCOUNTS SERVICE</option>
 								<option>ADVERTISING SERVICES</option>
@@ -229,7 +229,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Customer Type*</label>
-						      <select type="text" name="customer_type" class="form-control">
+						      <select required type="text" name="customer_type" class="form-control">
 						      	<option value="">Select from drop down</option>
 						      	<option>Individual</option>
 						      	<option>Institutional</option>
@@ -240,14 +240,22 @@
 				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Business Type*</label>
-						      <input type="text" name="business_type" class="form-control" id="business_type" value="<?= set_value('business_type'); ?>" aria-describedby="" placeholder="Business Type">
+						      <input required type="text" name="business_type" class="form-control" id="business_type" value="<?= set_value('business_type'); ?>" aria-describedby="" placeholder="Business Type">
 						      <small id="" class="form-text text-muted"><?= form_error('business_type'); ?></small>
+						    </div>
+						</div>
+				    	<div class="col-md-6 col-sm-6 col-xs-12 ">
+						    <div class="form-group">
+						      <label for="name">Business URL (Optional)</label>
+						      <input type="text" name="web_URL" class="form-control" id="web_URL" value="<?= set_value('web_URL'); ?>" aria-describedby="" placeholder="Website / Instagram / Facebook">
+						      <small>Any Web URL</small>
+						      <small id="" class="form-text text-muted"><?= form_error('web_URL'); ?></small>
 						    </div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 ">
 						    <div class="form-group">
 						      <label for="name">Area Range*</label>
-						      <select name="area_range" class="form-control">
+						      <select required name="area_range" class="form-control">
 						      	<option value="">Select Area</option>
 						      	<option>2 KM</option>
 						      	<option>5 KM</option>

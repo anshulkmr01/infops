@@ -18,7 +18,7 @@
 				$input_data = $this->input->post();
 				unset($input_data['submit']);
 				foreach ($input_data as $key => $value) {
-					if($key == 'GST_number') continue;
+					if($key == 'GST_number' or $key == 'web_URL') continue;
 					$this->form_validation->set_rules($key,'','trim|required',
 														array('required'=>'Required'));
 				}

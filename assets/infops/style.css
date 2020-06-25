@@ -6703,7 +6703,7 @@ ul {
   cursor: pointer;
   display: none;
   position: fixed;
-  right: 40px;
+  left: 40px;
   z-index: 999;
 }
 #scrollUp i {

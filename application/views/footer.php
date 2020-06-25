@@ -10,7 +10,6 @@
             <div class="b-strip">
             <span class="close-b-strip close-banner"><i class="far fa-times-circle"></i></span>
             <a href="<?= $b_strip_ad['web_URL']?>">
-                <?= $b_strip_ad['ad_title'] ?>
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$b_strip_ad['ad_file_name'])?>">
             </a>
         </div>
@@ -22,7 +21,6 @@
         <div class="r-strip">
             <span class="close-r-strip close-banner"><i class="far fa-times-circle"></i></span>
             <a href="<?= $r_strip_ad['web_URL']?>">
-                <?= $r_strip_ad['ad_title'] ?>
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$r_strip_ad['ad_file_name'])?>">
             </a>
         </div>
@@ -35,7 +33,6 @@
         <div class="l-strip">
             <span class="close-l-strip close-banner"><i class="far fa-times-circle"></i></span>
             <a href="<?= $l_strip_ad['web_URL']?>">
-                <?= $l_strip_ad['ad_title'] ?>
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$l_strip_ad['ad_file_name'])?>">
             </a>
         </div>

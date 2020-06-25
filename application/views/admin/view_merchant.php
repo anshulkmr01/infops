@@ -60,6 +60,9 @@
 							 if ($key == 'ID') {
 								$merchent_ID = $value;
 							 } 
+							 if ($key == 'web_URL') {
+								$web_URL = $value;
+							 } 
 							if($value != ''): ?>
 							
 							<tr class="table-light">
@@ -93,7 +96,7 @@
 								<?= form_error('ad_title')?>
 								</div>
 								<div class="form-group">
-									<input type="text"  name="web_URL" class="form-control" placeholder="Website URL (optional)">
+									<input type="text" value="<?= $web_URL; ?>"  name="web_URL" class="form-control" placeholder="Website URL (optional)">
 								<?= form_error('ad_title')?>
 								</div>
 								<div class="form-group">
