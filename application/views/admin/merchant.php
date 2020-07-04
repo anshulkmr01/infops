@@ -48,6 +48,7 @@
 							<tr class="table-primary">
 								<th scope="col">S No.</th>
 								<th scope="col">ID</th>
+								<th scope="col">EMP_ID</th>
 								<th scope="col">Full Name</th>
 								<th scope="col">Phone</th>
 								<th scope="col">Email Address</th>
@@ -64,7 +65,7 @@
 								<th scope="col">Area Range</th>
 								<th scope="col">Package</th>
 								<th scope="col">Amount</th>
-								<th scope="col">Start Date</th>
+								<th scope="col">Member since</th>
 								<th scope="col">Txn ID</th>
 								<th scope="col" colspan="2">Action</th>
 							</tr>
@@ -78,6 +79,7 @@
 								<tr class="table-light">
 								<td scope="col"><?= $i; ?></td>
 								<td scope="col"><?= $value->ID; ?></td>
+								<td scope="col"><?= $value->emp_ID; ?></td>
 								<td scope="col"><?= $value->name; ?></td>
 								<td scope="col"><?= $value->email; ?></td>
 								<td scope="col"><?= $value->phone; ?></td>

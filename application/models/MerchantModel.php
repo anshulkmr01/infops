@@ -22,6 +22,9 @@
 			$this->db->where('email',$inputdata['email']);
 			$this->db->where('phone',$inputdata['phone']);
 			$data = $this->db->get($table_name)->row_array();
+			if ($data['ID']) {
+				$data['active_package'] = $this->db->where('merchent_ID',$data['ID'])->get('advertisement')->result_array();
+			}
 			return $data;
 		}
 
@@ -60,9 +63,10 @@
 			return $this->db->get('merchant')->result();
 		}
 
-		public function delete_merchent($value)
+		public function delete_merchent($ID)
 		{
-			return $this->db->where('ID',$value)->delete('merchant');
+			$this->db->where('merchent_ID',$ID)->delete('advertisement');
+			return $this->db->where('ID',$ID)->delete('merchant');
 		}
 
 		public function view_merchent($value){
@@ -89,5 +93,13 @@
 		{
 			return $this->db->where('ID',$ID)->delete('advertisement');
 		}
+
+		public function impression_count($ID)
+		{
+			$this->db->where('ID', $ID);
+			$this->db->set('impression_count', 'impression_count+1', FALSE);
+			$this->db->update('advertisement');
+		}
+
 	}
 ?>

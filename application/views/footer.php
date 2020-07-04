@@ -9,7 +9,7 @@
         <?php if ($b_strip_ad): ?>
             <div class="b-strip">
             <span class="close-b-strip close-banner"><i class="far fa-times-circle"></i></span>
-            <a href="<?= $b_strip_ad['web_URL']?>">
+            <a href="<?= base_url('impression').'?ID='.$b_strip_ad['ID'].'&web_url='. $b_strip_ad['web_URL']?>">
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$b_strip_ad['ad_file_name'])?>">
             </a>
         </div>
@@ -20,7 +20,7 @@
         <?php if ($r_strip_ad): ?>
         <div class="r-strip">
             <span class="close-r-strip close-banner"><i class="far fa-times-circle"></i></span>
-            <a href="<?= $r_strip_ad['web_URL']?>">
+            <a href="<?= base_url('impression').'?ID='.$r_strip_ad['ID'].'&web_url='. $r_strip_ad['web_URL']?>">
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$r_strip_ad['ad_file_name'])?>">
             </a>
         </div>
@@ -32,7 +32,7 @@
         <?php if ($l_strip_ad): ?>
         <div class="l-strip">
             <span class="close-l-strip close-banner"><i class="far fa-times-circle"></i></span>
-            <a href="<?= $l_strip_ad['web_URL']?>">
+            <a href="<?= base_url('impression').'?ID='.$l_strip_ad['ID'].'&web_url='. $l_strip_ad['web_URL']?>">
                 <img src="<?= base_url($this->config->item('ad_files').'/'.$l_strip_ad['ad_file_name'])?>">
             </a>
         </div>
@@ -90,8 +90,10 @@
                                 <li><a href="<?= base_url('student_registration')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Registration</a></li>
                                 <li><a href="<?= base_url('student_login')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Login </a></li>
                                 <?php } ?>
-                                <li><a href="<?= base_url('admin')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Admin Login</a></li>
-                                <li><a href="<?= base_url('contact_us')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>  <li><a href="<?= base_url('latest_appliaction')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Latest Applications</a></li>
+                                <li><a href="<?= base_url('contact_us')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
+
+                                <li><a href="<?= base_url('merchant')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Ads Campaign</a></li>
+                                <li><a href="<?= base_url('latest_appliaction')?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Latest Applications</a></li>
                                 
                             </ul>
                             </div>

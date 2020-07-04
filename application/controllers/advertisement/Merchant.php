@@ -18,7 +18,7 @@
 				$input_data = $this->input->post();
 				unset($input_data['submit']);
 				foreach ($input_data as $key => $value) {
-					if($key == 'GST_number' or $key == 'web_URL') continue;
+					if($key == 'GST_number' or $key == 'web_URL' or $key == 'emp_ID') continue;
 					$this->form_validation->set_rules($key,'','trim|required',
 														array('required'=>'Required'));
 				}
@@ -149,6 +149,14 @@
         	$this->session->unset_userdata('merchant_data');
         	$this->session->set_flashdata('success',"Logout Success");
         	return redirect('merchant');
+        }
+
+        public function impression_count()
+        {
+        	$ID = $_GET['ID'];
+        	$URL = $_GET['web_url'];
+        	$this->MerchantModel->impression_count($ID);
+        	return redirect($URL);
         }
 	}
 ?>

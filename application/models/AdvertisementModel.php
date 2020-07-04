@@ -93,7 +93,7 @@
 
 			$count = $ad_count+1;
 			$this->session->set_userdata('silver_gold_ad_count',$count);
-			 return $data;
+			return $data;
 
 		}
 	}

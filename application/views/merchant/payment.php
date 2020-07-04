@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Infops Merchant Registration</title>
 	<!-- Global Css using Helper -->
 	<?php 
-			globalCss(); 
+			globalCss();
+			$merchant_session = $this->session->userdata('merchant_data'); 
 	?>
 	<!--/ Global Css using Helper -->
 	<?php
@@ -118,7 +120,7 @@ function package_price(val){
 	<div class="container-fluid" style="min-height: 400px;">
 		<div class="row mt-5">
 			<div class="col-1 pt-5"></div>
-			<div class="col-sm-5 col-md-5 col-lg-4 pt-5">
+			<div class="col-md-5 col-lg-4 pt-5">
             	<legend>Select Package & pay</legend>
 				<div class="form-group">
 				  <label>Merchant Details:-</label><br>
@@ -179,23 +181,29 @@ function package_price(val){
 				      </table>
 				</form>
 			</div>
-			<div class="col-sm-1 col-md-1 col-lg-3 pt-5"></div>
-			<?php if (isset($merchant_data['package'])): ?>
-			<div class="col-sm-5 col-md-5 col-lg-4 pt-5">
-				<legend>Package Details</legend>
-				<table class="table">
+			<div class="col-md-1 col-lg-1 pt-5"></div>
+			<?php if ($merchant_session['active_package']): ?>
+			<div class="col-md-5 col-lg-6 pt-5">
+				<legend>Active Package Details</legend>
+				<table class="table table-responsive w-100">
 					<thead>
 					<tr>
 						<th>Pakage</th>
+						<th>AD. Title</th>
+						<th>Impression</th>
 						<th>Start Date</th>
 						<th>Expire Date</th>
 					</tr>
 					<tbody>
+						<?php foreach ($merchant_session['active_package'] as $key => $value): ?>
 						<tr>
-							<td><?= $merchant_data['package'] ?></td>
-							<td><?= date('d/m/Y',strtotime($merchant_data['package_start'])) ?></td>
-							<td><?= date('d/m/Y', strtotime($merchant_data['package_start']. ' + 30 days')) ?></td>
+							<td><?= $value['ad_package'] ?></td>
+							<td><?= $value['ad_title'] ?></td>
+							<td><?= $value['impression_count'] ?></td>
+							<td><?= date('d/m/Y',strtotime($value['ad_active_date'])) ?></td>
+							<td><?= date('d/m/Y', strtotime($value['ad_active_date']. ' + 364 days')) ?></td>
 						</tr>
+						<?php endforeach ?>
 					</tbody>
 					</thead>
 				</table>

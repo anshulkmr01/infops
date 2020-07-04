@@ -108,7 +108,7 @@
 							</form>
 						</div>
 						<?php if ($merchant_ad): ?>
-						<table class="table table-hover mt-4">
+						<table class="table table-hover mt-4 table-responsive">
 							<thead>
 								<tr  class="table-primary">
 									<th>
@@ -127,7 +127,13 @@
 										Web URL
 									</th>
 									<th>
+										Impression Count
+									</th>
+									<th>
 										Active Date
+									</th>
+									<th>
+										Ad Expire
 									</th>
 									<th>
 										Status
@@ -150,7 +156,9 @@
 										<th><?php if ($value->web_URL) {
 										echo anchor($value->web_URL,'url');
 										}  ?></th>
+										<th><?= $value->impression_count?></th>
 										<th><?= date('d/m/Y h:m A',strtotime($value->ad_active_date)); ?></th>
+										<th><?= date('d/m/Y h:m A',strtotime($value->ad_active_date.'+ 364 days')); ?></th>
 										<?php if ($value->is_active == 1): ?>
 										<th class="text-success">Active</th>
 										<?php else: ?>

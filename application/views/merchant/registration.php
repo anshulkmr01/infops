@@ -260,8 +260,15 @@
 						      	<option>2 KM</option>
 						      	<option>5 KM</option>
 						      	<option>15 KM</option>
+						      	<option>IN City</option>
 						      	<option>PEN India</option>
 						      </select>
+						    </div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 ">
+						    <div class="form-group">
+						      <label for="name">Employee ID</label>
+						      <input type="text" name="emp_ID" class="form-control" id="web_URL" value="<?= set_value('emp_ID'); ?>" aria-describedby="" placeholder="Employee ID">
 						    </div>
 						</div>
 				    </div>
