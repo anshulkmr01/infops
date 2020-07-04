@@ -75,11 +75,9 @@
 								<?= form_error('ad_package')?>
 								<div class="form-group">
 									<input type="text" required  name="ad_title" class="form-control" placeholder="Ad Title">
-								<?= form_error('ad_title')?>
 								</div>
 								<div class="form-group">
-									<input type="text" value="<?= $web_URL; ?>"  name="web_URL" class="form-control" placeholder="Website URL (optional)">
-								<?= form_error('ad_title')?>
+									<input type="text" name="web_URL" class="form-control" placeholder="Website URL (optional)">
 								</div>
 								<div class="form-group">
 									<input type="file" required  class="form-control-file" name="ad_banner">
@@ -128,8 +126,15 @@
 							<tbody>
 								<?php
 								$i=0;
-								 foreach ($merchant_ad as $key => $value): $i++;?>
-									<tr class="font-weight-normal">
+								 foreach ($merchant_ad as $key => $value): $i++;
+								 	$expire_class = '';
+								 	$today_date = strtotime(date("Y-m-d H:i:s"));
+								 	$ad_expiry_alert_days = strtotime($value->ad_active_date.'+ 354 days');
+								 	if ($ad_expiry_alert_days <= $today_date) {
+								 		$expire_class = 'bg-danger';
+								 	}
+								 	?>
+									<tr class="font-weight-normal <?= $expire_class; ?>">
 										<th><?= $i; ?></th>
 										<th><?= $value->ID; ?></th>
 										<th><?= $value->ad_title; ?></th>
