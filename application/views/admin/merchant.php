@@ -43,9 +43,9 @@
 				<div class="container">
 					<h3>Merchants</h3>
 					<?php if (isset($merchant_data) && $merchant_data!=null): ?>
-					<table class="table table-hover table-responsive">
+					<table class="table table-hover table-responsive sortable-table">
 						<thead>
-							<tr class="table-primary">
+							<tr class="table-info sorter-header">
 								<th scope="col">S No.</th>
 								<th scope="col">ID</th>
 								<th scope="col">EMP_ID</th>

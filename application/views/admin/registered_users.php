@@ -56,9 +56,9 @@
 						<span class="text-danger mb-4">Deleting Student from All Students will delete Student from Enroll table too. </span>
 					<?php endif;?>
 					<?php if(isset($registered_users)):?>
-					<table class="table table-hover">
+					<table class="table table-hover sortable-table">
 						<thead>
-							<tr class="table-primary">
+							<tr class="table-info sorter-header">
 								<th scope="col">S No.</th>
 								<th scope="col">Enrollment</th>
 								<th scope="col">Name</th>

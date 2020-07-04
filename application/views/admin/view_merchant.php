@@ -88,9 +88,9 @@
 							</form>
 						</div>
 						<?php if ($merchant_ad): ?>
-						<table class="table table-hover mt-4 table-responsive">
+						<table class="table table-hover mt-4 table-responsive sortable-table">
 							<thead>
-								<tr  class="table-primary">
+								<tr  class="table-primary sorter-header">
 									<th>
 										S.NO
 									</th>

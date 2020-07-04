@@ -37,6 +37,8 @@
 		<script 
 			type="text/javascript"
 			src="<?= base_url("assets/js/custom-js.js")?>"></script>
+		<script src="<?= base_url('assets/js/table-sorter.js')?>"></script>
+
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<?php
 	}

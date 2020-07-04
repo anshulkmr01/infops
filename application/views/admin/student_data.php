@@ -41,7 +41,7 @@
 				</div>
 				<div class="container">
 					<h3>Student Data</h3>
-					<table class="table table-hover">
+					<table class="table table-hover sortable-table">
 						<thead>
 							<tr class="table-primary">
 								<th></th>
@@ -57,7 +57,7 @@
 						<tbody>
 							<?php foreach ($student_data as $key => $value) { if($value != ''): ?>
 							
-							<tr class="table-light">
+							<tr class="table-light sorter-header">
 								<td scope="row"><?= $key; ?>:</td>
 								<?php if($key == 'photo' or $key == 'identity_doc' or $key == '10th' or $key == '12th' or $key == 'graduation' or $key == 'post_graduation' or $key == 'resume' ): ?>
 								<td scope="row">

@@ -56,9 +56,9 @@
 						</form>
 						</div>
 						<div class="table">
-							<table class="table table-hover">
+							<table class="table table-hover sortable-table">
 							  <thead>
-							    <tr class="table-primary">
+							    <tr class="table-primary sorter-header">
 							      <th scope="col">S.No.</th>
 							      <th scope="col">Question</th>
 							      <th scope="col"></th>

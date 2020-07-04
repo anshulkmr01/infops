@@ -48,9 +48,9 @@
 						</div>
 						<hr>
 						<div class="table">
-							<table class="table table-hover">
+							<table class="table table-hover sortable-table">
 							  <thead>
-							    <tr class="table-primary">
+							    <tr class="table-primary sorter-header">
 							      <th scope="col">S.No.</th>
 							      <th scope="col">Full Name</th>
 							      <th scope="col">Email</th>
@@ -62,7 +62,7 @@
 							  </thead>
 							  <tbody>
 							  	<?php $i=0; if($cat_result){ foreach ($cat_result as $key => $value) { $i++; ?>
-							    <tr class="table-light">
+							    <tr class="table-light sorter-header">
 							      <th scope="row"><?= $i; ?></th>
 							      <td><?= $value['fname']; echo " ". $value['lname']; ?></td>
 							      <td><?= $value['email'];?></td>
