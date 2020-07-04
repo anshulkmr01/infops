@@ -67,7 +67,7 @@
 								<th scope="col">Amount</th>
 								<th scope="col">Member since</th>
 								<th scope="col">Txn ID</th>
-								<th scope="col" colspan="2">Action</th>
+								<th scope="col" class="text-center" colspan="3">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -99,6 +99,9 @@
 								<td scope="col"><?= date('d/m/Y', strtotime($value->package_start)); ?></td>
 								<td scope="col"><?= $value->txnid; ?></td>
 								<td scope="col">
+									<a href="#" data-toggle="modal" data-target="#exampleModal" class="btn force_active btn-primary" data-id="<?= $value->ID?>">Activate</a>
+								</td>
+								<td scope="col">
 									<a href="<?= base_url('view_merchent/'.$value->ID.'')?>" class="btn btn-primary">View</a>
 								</td>
 								<td scope="col">
@@ -121,9 +124,51 @@
 		<?php include 'footer.php'?>
 	<!--/ footer -->
 	</footer>
-	
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Force Merchant Active</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <form action="<?= base_url('force_update_payment')?>" method="post">
+	      <div class="modal-body">
+		    <div class="form-group">
+		      <input type="number" required="required" class="form-control" name="amount" placeholder="Amount">
+		    </div>
+		    <div class="form-group">
+		      <input type="text" required="required" class="form-control" name="txnid" placeholder="Txn ID">
+		    </div>
+	      	<input type="hidden" name="ID" required="required" id="merchant_ID">
+	      	<div class="form-group">
+				<select name="package" required="required" class="form-control">
+				<option value="">Select</option>
+				<option value="silver">Silver</option>
+				<option value="gold">Gold</option>
+				<option value="diamond">Diamond</option>
+				<option value="platinum">Platinum</option>
+				</select>
+	      	</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="submit" class="btn btn-primary">Update</button>
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+      	</form>
+	    </div>
+	  </div>
+	</div>
 </body>
 	<?php 
 			globalJs(); 
 	?>
+	<script type="text/javascript">
+	// Setting Value of Docnament in Modal for update//
+		$(document).on("click", ".force_active", function () {
+	     var ID = $(this).data('id');
+	     $("#merchant_ID").val(ID);;
+	});
+	</script>
 </html>

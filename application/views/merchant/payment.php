@@ -182,7 +182,7 @@ function package_price(val){
 				</form>
 			</div>
 			<div class="col-md-1 col-lg-1 pt-5"></div>
-			<?php if ($merchant_session['active_package']): ?>
+			<?php if (isset($merchant_session['active_package'])): ?>
 			<div class="col-md-5 col-lg-6 pt-5">
 				<legend>Active Package Details</legend>
 				<table class="table table-responsive w-100">

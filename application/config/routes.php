@@ -175,3 +175,4 @@ $route['change_ad_status/(:any)/(:any)'] = 'advertisement/Merchant_Admin/change_
 $route['delete_merchant_ad/(:any)/(:any)'] = 'advertisement/Merchant_Admin/delete_merchant_ad/$1/$2';
 
 $route['impression'] = 'advertisement/Merchant/impression_count';
+$route['force_update_payment'] = 'advertisement/Merchant_Admin/force_update_payment';

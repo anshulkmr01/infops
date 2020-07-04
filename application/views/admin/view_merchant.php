@@ -22,24 +22,6 @@
 		<!-- mainbody -->
 			<div class="cms-body">
 				<div class="container">
-					<div class="row">
-						<div class="col-sm-5 alert-message">
-							<?php if($success = $this->session->flashdata('success')):?>
-						    	<div class="alert alert-warning">
-						    		<?= $success; ?>
-						    	</div>
-						    <?php endif;?>
-
-						    <?php if($error = $this->session->flashdata('error')):?>
-						    	<div class="alert alert-danger">
-						    		<?= $error; ?>
-						    	</div>
-						    <?php endif;?>
-						</div>
-						<div class="col-sm-7"></div>
-					</div>
-				</div>
-				<div class="container">
 					<h3>Merchant Data</h3>
 					<table class="table table-hover table-responsive">
 						<thead>

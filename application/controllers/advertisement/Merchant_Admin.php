@@ -133,5 +133,19 @@
                 }
                 return $data;
         }
+
+        public function force_update_payment()
+        {
+        	$merchant_update = $this->input->post();
+        	if($this->MerchantModel->force_update_payment($merchant_update))
+        	{
+        		$this->session->set_flashdata('success','Payment Update');
+        		return redirect('http://localhost/infopexamination/merchant_list');
+        	}
+        	else{
+        		$this->session->set_flashdata('error','Payment Updation failed');
+        		return redirect('http://localhost/infopexamination/merchant_list');
+        	}
+        }
 	}
 ?>

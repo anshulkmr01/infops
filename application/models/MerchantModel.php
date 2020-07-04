@@ -100,6 +100,10 @@
 			$this->db->set('impression_count', 'impression_count+1', FALSE);
 			$this->db->update('advertisement');
 		}
+		public function force_update_payment($merchant_data)
+		{
+			return $this->db->where('ID',$merchant_data['ID'])->update('merchant',$merchant_data);
+		}
 
 	}
 ?>
